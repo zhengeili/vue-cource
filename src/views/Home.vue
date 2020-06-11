@@ -2,6 +2,9 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/img/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="handleClick('back')">返回上一页</button>
+    <button @click="handleClick('push')">返回parent页</button>
+    <button @click="handleClick('replace')">替换到parent</button>
   </div>
 </template>
 
@@ -13,6 +16,26 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  methods: {
+    handleClick (type) {
+      // this.$router.back()
+      if (type === 'back') this.$router.back()
+      else if (type === 'push') {
+        const name = 'lison'
+        this.$router.push({
+          // name: 'argu',
+          // params: {
+          //   name: 'lison'
+          // }
+          path: `/argu/${name}`
+        })
+      } else if (type === 'replace') {
+        this.$router.replace({
+          name: 'parent'
+        })
+      }
+    }
   }
 }
 </script>

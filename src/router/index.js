@@ -7,9 +7,9 @@ Vue.use(VueRouter)
 // const routes = [
 
 // ]
-
-const router = new VueRouter({
+// const router = new VueRouter({
+//   routes
+// })
+export default new VueRouter({
   routes
 })
-
-export default router

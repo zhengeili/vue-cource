@@ -5,7 +5,7 @@
       <!-- <button @click="handleClick">ssss</button> -->
       <slot name="left"></slot>
     </div>
-    <div class="pane pane-trigger-con" @mousedown="handleMousedown" :style="{ left: triggerLeft, width: `${triggerWidth}px` }"></div>
+    <div class="pane-trigger-con" @mousedown="handleMousedown" :style="{ left: triggerLeft, width: `${triggerWidth}px` }"></div>
     <div class="pane pane-right" :style="{ left: leftOffsetPercent, paddingLeft: `${this.triggerWidth / 2}px` }">
       <slot name="right"></slot>
     </div>
@@ -106,6 +106,7 @@ export default {
       height: 100%;
       background: red;
       top:0;
+      position: absolute; // 绝对定位
       z-index: 10;
       user-select: none;
       cursor: col-resize;

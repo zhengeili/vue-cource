@@ -49,6 +49,12 @@ export default [
     props: true
   },
   {
+    path: '/menu_page',
+    name: 'menu_page',
+    component: () => import('@/views/menu-page.vue'),
+    props: true
+  },
+  {
     path: '/render_page',
     name: 'render_page',
     component: () => import('@/views/render-page.vue'),
